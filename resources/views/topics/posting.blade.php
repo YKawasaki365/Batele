@@ -1,5 +1,4 @@
-<!-- "トップp_guest"(デフォルトのトップページ) -->
-<!-- トピック一覧のトピック部分はtopics/topics.blade -->
+<!-- トピック投稿ページ -->
 
 @extends('layouts.app')
 
@@ -17,7 +16,15 @@
                 </div>
             </aside>
             <div class="col-sm-8">
-                @if (count($topics) > 0)
+                @if (Auth::id() == $user->id)
+                    {!! Form::open(['route' => 'topics.store']) !!}
+                        <div class="form-group">
+                            {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
+                            {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
+                        </div>
+                    {!! Form::close() !!}
+                @endif
+                @if (count($microposts) > 0)
                     @include('topics.topics', ['topics' => $topics])
                 @endif
             </div>
@@ -25,7 +32,7 @@
     @else
         <div class="center jumbotron">
             <div class="text-center">
-                <h1>Welcome to the Batele</h1>
+                <h1>Welcome to the Microposts</h1>
                 {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
         </div>
