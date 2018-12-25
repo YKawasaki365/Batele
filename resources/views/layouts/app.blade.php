@@ -1,3 +1,5 @@
+<!-- <<部品>>bootstrap等の利用宣言 -->
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>

@@ -1,3 +1,4 @@
-<!-- "トップp_member"(ログイン後のトップページ) -->
-<!-- コントローラー内の記述はreturn view('users.show', $data) -->
-<!-- トピック一覧のトピック部分はtopics/topics.blade -->
+<!-- 
+・元はMicropostsのタブ"My profile"->トップ画面全体--(タイムライン一覧)
+・現時点で使い道なし
+-->

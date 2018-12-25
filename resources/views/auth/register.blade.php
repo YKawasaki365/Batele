@@ -1,3 +1,5 @@
+<!-- <<本体>>ユーザー登録ページ """ユーザー登録p""" -->
+
 @extends('layouts.app')
 
 @section('content')
