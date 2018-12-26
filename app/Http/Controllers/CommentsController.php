@@ -18,7 +18,6 @@ class CommentsController extends Controller
 //        return back();
 //    }
 
-// コメント一覧?
     public function comments($id)
     {
         $user = User::find($id);

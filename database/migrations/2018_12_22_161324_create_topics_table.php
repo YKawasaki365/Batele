@@ -26,6 +26,7 @@ class CreateTopicsTable extends Migration
             $table->string('b2_item')->unique();
             $table->string('b3_item')->unique();
             $table->string('b4_item')->unique();
+
             $table->timestamps();
 
             // 外部キー制約

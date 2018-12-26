@@ -32,9 +32,6 @@ class TopicsController extends Controller
             'a2_item' => 'required|max:181',
             'a3_item' => 'required|max:181',
             'a4_item' => 'required|max:181',
-//  外す?(required (カラッポでないか確認))
-//            'b0_item' => 'required|max:181','b1_item' => 'required|max:181','b2_item' => 'required|max:181',
-//            'b3_item' => 'required|max:181','b4_item' => 'required|max:181',
         ]);
 
         $request->user()->topics()->create([
@@ -44,11 +41,12 @@ class TopicsController extends Controller
             'a2_item' => $request->a2_item,
             'a3_item' => $request->a3_item,
             'a4_item' => $request->a4_item,
-            'b0_item' => $request->a0_item,
-            'b1_item' => $request->a1_item,
-            'b2_item' => $request->a2_item,
-            'b3_item' => $request->a3_item,
-            'b4_item' => $request->a4_item,
+            'b0_item' => '',
+            'b1_item' => '',
+            'b2_item' => '',
+            'b3_item' => '',
+            'b4_item' => '',
+
         ]);
 
         return redirect('/');
@@ -58,8 +56,8 @@ class TopicsController extends Controller
     public function edit($id)
     {
         $topic = Topic::find($id);
-        
-        return view('topics.posting', [
+
+        return view('topics.edit', [
             'topic' => $topic,
         ]);
     }
@@ -75,7 +73,11 @@ class TopicsController extends Controller
             'b4_item' => 'required|max:181',
         ]);
 
-        $topic = Topic::find($id);
+        $topic = Topic::find( $id );
+        if( $topic !== null && $topic ->b0_item != '' ){
+        abort(400, '禁止です');
+        }
+
         $topic->b0_item = $request->b0_item;
         $topic->b1_item = $request->b1_item;
         $topic->b2_item = $request->b2_item;
