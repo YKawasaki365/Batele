@@ -16,16 +16,16 @@ class CreateTopicsTable extends Migration
             $table->increments('id');
             $table->string('title',60);
             $table->integer('user_id')->unsigned()->index();
-            $table->string('a0_item')->unique();
-            $table->string('a1_item')->unique();
-            $table->string('a2_item')->unique();
-            $table->string('a3_item')->unique();
-            $table->string('a4_item')->unique();
-            $table->string('b0_item')->unique();
-            $table->string('b1_item')->unique();
-            $table->string('b2_item')->unique();
-            $table->string('b3_item')->unique();
-            $table->string('b4_item')->unique();
+            $table->string('a0_item',181);
+            $table->string('a1_item',181);
+            $table->string('a2_item',181);
+            $table->string('a3_item',181);
+            $table->string('a4_item',181);
+            $table->string('b0_item',181);
+            $table->string('b1_item',181);
+            $table->string('b2_item',181);
+            $table->string('b3_item',181);
+            $table->string('b4_item',181);
 
             $table->timestamps();
 
