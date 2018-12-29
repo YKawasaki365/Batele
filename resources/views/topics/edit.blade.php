@@ -15,67 +15,84 @@
 
 /* メディアクエリ～フォントサイズ調整　414/768/1024以下 */
             body {
-                font-size:16px;
+                font-size: 16px;
             }
-            .top {
-                    font-size:95%;
+            .topic-num {
+                    font-size: 18px;
             }
-            .col-item1 {
-                    font-size:100%;
+            .topic-title {
+                    width: 510px;
+                    font-size: 18px;
+                    margin-left: 120px;
+                    background-color: #b6b7ba;
             }
-            .col-item11 {
-                    font-size:100%;
+            .A-name {
+                    width: 180px;
+                    font-size: 16px;
+                    margin-left: 170px;
             }
-            .col-item2 {
-                    font-size:130%;
+            .B-name {
+                    width: 230px;
+                    font-size: 15px;
+                    margin-left: 320px;
             }
-            .col-item22 {
-                    font-size:130%;
+            .col-A1 {
+                    width: 45%;
+                    height: 7%;
+                    font-size:16px;
+                    background-color: #b6b7ba;
+            }
+            .col-B1 {
+                    width: 60%;
+                    height: 7%;
+                    font-size: 15px;
+                    margin-bottom: 10%;
+            }
+            .col-A2 {
+                    width: 95%;
+                    height: 20%;
+                    font-size: 21px;
+                    background-color: #b6b7ba;
+            }
+            .col-B2 {
+                    width: 95%;
+                    height: 20%;
+                    font-size: 17px;
+                    margin-bottom: 10%;
             }
 
             @media (max-width: 1024px) {
-                body{
-                    font-size:15px;
-                }
-                .top {
-                    font-size:80%;
-                }
-                .col-item1 {
-                    font-size:95%;
-                }
-                .col-item2 {
-                    font-size:115%;
-                }
+                body {font-size:15px;}
+                .topic-num {font-size:100%;}
+                .topic-title {font-size:110%; margin-left:70px;}
+                .A-name {width:180px; font-size:110%; margin-left:130px;}
+                .B-name {font-size:100%; margin-left:240px;}
+                .col-A1 {font-size:100%;}
+                .col-A2 {font-size:115%;}
             }
 
             @media (max-width: 768px) {
-                body{
-                    font-size:15px;
-                }
-                .top {
-                    font-size:80%;
-                }
-                .col-item1 {
-                    font-size:85%;
-                }
-                .col-item2 {
-                    font-size:110%;
-                }
+                body {font-size:15px;}
+                .topic-num {font-size:100%;}
+                .topic-title {font-size:90%; width:45%; margin-bottom:10px; margin-left:50px;}
+                .A-name {width:160px; font-size:100%; margin-left:90px;}
+                .B-name {width:190px; font-size:90%; margin-left:125px;}
+                .col-A1 {font-size:75%;}
+                .col-B1 {font-size:80%; margin-bottom: 15%;}
+                .col-A2 {font-size:100%;}
+                .col-B2 {font-size:85%; margin-bottom: 14%;}
             }
 
             @media (max-width: 414px) {
-                body{
-                    font-size:13px;
-                }
-                .top {
-                    font-size:70%;
-                }
-                .col-item1 {
-                    font-size:30%;
-                }
-                .col-item2 {
-                    font-size:60%;
-                }
+                body {font-size:11px;}
+                .topic-num {font-size:100%; margin-left:5px;}
+                .topic-title {font-size:90%; width:45%; margin-left:0px;}
+                .A-name {width:30%; margin:9px; margin-left:35px; font-size:80%;}
+                .B-name {width:36%; margin:9px; margin-left:48px; font-size:60%;}
+                .col-A1 {width: 55%; font-size: 70%;}
+                .col-B1 {width: 80%; font-size:80%; margin-bottom: 36%;}
+                .col-A2 {width: 100%; height: 21%; font-size:50%;}
+                .col-B2 {width: 105%; height: 23%; font-size:90%; margin-bottom: 25%;;}
             }
 
             .row-title {
@@ -89,19 +106,27 @@
 
             .box-outer {
                 border: 2px solid #898a8e;
-                border-radius:20px;
+                border-radius: 20px;
                 margin-top: 3%;
                 margin-bottom: 2%;
             }
 
-            .top {
+            .topic-title {
                 border: 2px solid #898a8e;
-                border-radius:5px;
+                border-radius: 5px;
+                background-color: #b6b7ba;
+                margin-bottom: 10px;
+            }
+
+            .A-name {
+                border: 2px solid #898a8e;
+                border-radius: 5px;
                 background-color: #b6b7ba;
             }
 
             .space {
                 margin: 1%;
+                margin-left: 2%;
             }
 
             .A-side {
@@ -128,38 +153,8 @@
 
             @media (max-width: 414px) {
                 .B-side {
-                    margin-left: 5%;
+                    margin-left: 13%;
                 }
-            }
-/*
-            .col-item0 {
-                    width: 40%;
-                    height: 6%;
-                    background-color: white;
-            }
-*/
-            .col-item1 {
-                    width: 40%;
-                    height: 7%;
-                    background-color: #b6b7ba;
-            }
-
-            .col-item11 {
-                    width: 60%;
-                    height: 7%;
-                    margin-bottom: 10%;
-            }
-
-            .col-item2 {
-                    width: 95%;
-                    height: 20%;
-                    background-color: #b6b7ba;
-            }
-
-            .col-item22 {
-                    width: 95%;
-                    height: 20%;
-                    margin-bottom: 9%;
             }
 
         </style>
@@ -172,18 +167,18 @@
                 <div class="form-group">
                     <!-- タイトル -->
                     <div class="row">
-                        <span class="col-2 space alert"><h5>TOPIC {{$topic->id}}：</h5></span>
-                        <span class="col-md-6.5 top space alert"><h5>{!! nl2br(e($topic->title)) !!}</h5></span>
+                        <span class="space alert topic-num">TOPIC {{$topic->id}}</span>
+                        <span class="offset-md-1 topic-title">{!! nl2br(e($topic->title)) !!}</span>
                     </div>
                     <!--投稿者名-->
                     <div class="row">
-                        <div class="col-md-2 offset-md-1 top">{!! nl2br(e($topic->a0_item)) !!}</div>
-                        <div class="col-md-3 offset-md-4">
-                            {!! Form::label('b0_item', '投稿者の表示名（10字まで）：') !!}
-                            {!! Form::text('b0_item', old('b0_item'), ['class' => 'form-control']) !!}
+                        <div class="offset-md-1 A-name">{!! nl2br(e($topic->a0_item)) !!}</div>
+                        <div class="offset-md-3 B-name">
+                            投稿者の表示名（10字まで）:
+                            {!! Form::textarea('b0_item', old('b0_item'), ['class' => 'form-control', 'rows' => 1, 'cols' => 24]) !!}
                         </div>
                     </div>
-                
+
                     <div class="row">
                         <div class="col-md-12">
 
@@ -191,30 +186,30 @@
                                     <!-- A側カラム-->
                                     <aside>
                                         <div class="col-11 .col-md-6 A-side alert alert-success">陣営Aの名称:
-                                                <p class="col-item1">{!! nl2br(e($topic->a1_item)) !!}</p>A側主張:
-                                                <p class="col-item2">{!! nl2br(e($topic->a2_item)) !!}</p>A側の肯定理由・メリット:
-                                                <p class="col-item2">{!! nl2br(e($topic->a3_item)) !!}</p>B側の否定理由・デメリット:
-                                                <p class="col-item2">{!! nl2br(e($topic->a4_item)) !!}</p>
+                                                <p class="col-A1">{!! nl2br(e($topic->a1_item)) !!}</p>A側主張:
+                                                <p class="col-A2">{!! nl2br(e($topic->a2_item)) !!}</p>A側の肯定理由・メリット:
+                                                <p class="col-A2">{!! nl2br(e($topic->a3_item)) !!}</p>B側の否定理由・デメリット:
+                                                <p class="col-A2">{!! nl2br(e($topic->a4_item)) !!}</p>
                                         </div>
                                     </aside>
 
                                     <!-- B側カラム-->
                                     <aside>
                                         <div class="col-11 .col-md-6 B-side alert alert-danger">
-                                                <p class="col-item11">
-                                                    陣営Bの名称（10字まで）：
-                                                    {!! Form::text('b1_item', old('b1_item'), ['class' => 'form-control']) !!}
+                                                <p class="col-B1">
+                                                    陣営Bの名称（10字まで）:
+                                                    {!! Form::textarea('b1_item', old('b1_item'), ['class' => 'form-control', 'rows' => 1]) !!}
                                                 </p>
-                                                <p class="col-item22">
-                                                    B側主張（60字まで）：
+                                                <p class="col-B2">
+                                                    B側主張（60字まで）:
                                                     {!! Form::textarea('b2_item', old('b2_item'), ['class' => 'form-control', 'rows' => 3]) !!}
                                                 </p>
-                                                <p class="col-item22">
-                                                    B側の肯定理由・メリット（60字まで）：
+                                                <p class="col-B2">
+                                                    B側の肯定理由・メリット（60字まで）:
                                                     {!! Form::textarea('b3_item', old('b3_item'), ['class' => 'form-control', 'rows' => 3]) !!}
                                                 </p>
-                                                <p class="col-item22">
-                                                    A側の否定理由・デメリット（60字まで）：
+                                                <p class="col-B2">
+                                                    A側の否定理由・デメリット（60字まで）:
                                                     {!! Form::textarea('b4_item', old('b4_item'), ['class' => 'form-control', 'rows' => 3]) !!}
                                                 </p>
                                         </div>

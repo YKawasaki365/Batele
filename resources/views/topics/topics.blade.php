@@ -23,65 +23,67 @@
 
 /* メディアクエリ～フォントサイズ調整　414/768/1024以下 */
             body {
-                font-size:16px;
+                font-size: 16px;
             }
-            .top {
-                    font-size:95%;
+            .topic-num {
+                    font-size: 18px;
             }
-            .col-item1 {
-                    font-size:100%;
+            .topic-title {
+                    width: 560px;
+                    font-size: 18px;
+                    margin-left: 150px;
             }
-            .col-item2 {
-                    font-size:130%;
+            .A-name {
+                    width: 230px;
+                    font-size: 17px;
+                    margin-left: 160px;
+            }
+            .B-name {
+                    width: 230px;
+                    font-size: 17px;
+                    margin-left: 345px;
+            }
+            .col-C1 {
+                    width: 180px;
+                    height: 7%;
+                    font-size: 16px;
+                    background-color: white;
+            }
+            .col-C2 {
+                    width: 450px;
+                    height: 20%;
+                    font-size: 22px;
+                    background-color: white;
             }
 
             @media (max-width: 1024px) {
-                body{
-                    font-size:15px;
-                }
-                .top {
-                    font-size:80%;
-                }
-                .col-item1 {
-                    font-size:95%;
-                }
-                .col-item2 {
-                    font-size:115%;
-                }
+                body{font-size:15px;}
+                .topic-num {font-size:110%;}
+                .topic-title {width:520px; font-size:112%; margin-left:90px;}
+                .A-name {width:180px; font-size:110%; margin-left:140px;}
+                .B-name {width:180px; font-size:110%; margin-left:270px;}
+                .col-C1 {width: 45%; height: 7%; font-size:100%;}
+                .col-C2 {width: 95%; height: 16%; font-size:115%;}
             }
 
             @media (max-width: 768px) {
-                body{
-                    font-size:15px;
-                }
-                .top {
-                    font-size:80%;
-                }
-                .col-item1 {
-                    font-size:85%;
-                }
-                .col-item2 {
-                    font-size:110%;
-                }
+                body{font-size:15px;}
+                .topic-num {font-size:110%;}
+                .topic-title {width:400px; font-size:125%; margin-left:30px;}
+                .A-name {width:180px; font-size:110%; margin-left:90px;}
+                .B-name {width:180px; font-size:110%; margin-left:170px;}
+                .col-C1 {width: 60%; height: 5%; font-size:100%;}
+                .col-C2 {width: 95%; height: 20%; font-size:110%;}
             }
 
             @media (max-width: 414px) {
-                body{
-                    font-size:13px;
-                }
-                .top {
-                    font-size:70%;
-                }
-                .col-item1 {
-                    font-size:30%;
-                }
-                .col-item2 {
-                    font-size:60%;
-                }
-            }
-
-            .row-title {
-                text-align: center;
+                body{font-size:12px;}
+                .topic-num {font-size:100%;}
+                .topic-title {width:200px; font-size:110%; margin-left:0px;}
+                .A-name {width:120px; font-size:90%; margin-left:35px;}
+                .B-name {width:120px; font-size:90%; margin-left:90px;}
+                .col-C1 {width: 70%; height: 6%; font-size:80%;}
+                .col-C2 {width: 100%; height: 20%; font-size:95%;}
             }
 
             #wrapper {
@@ -96,9 +98,16 @@
                 margin-bottom: 2%;
             }
 
-            .top {
+            .topic-title {
                 border: 2px solid #898a8e;
                 border-radius:5px;
+                background-color: white;
+                margin-bottom: 10px;
+            }
+
+            .C-name {
+                border: 2px solid #898a8e;
+                border-radius: 5px;
                 background-color: white;
             }
 
@@ -133,24 +142,6 @@
                     margin-left: 20%;
                 }
             }
-/*
-            .col-item0 {
-                    width: 40%;
-                    height: 6%;
-                    background-color: white;
-            }
-*/
-            .col-item1 {
-                    width: 40%;
-                    height: 7%;
-                    background-color: white;
-            }
-/* 21px or */
-            .col-item2 {
-                    width: 95%;
-                    height: 20%;
-                    background-color: white;
-            }
 
         </style>
     </head>
@@ -162,13 +153,13 @@
 
                     <!-- タイトル -->
                     <div class="row">
-                        <span class="col-2 space alert"><h5>TOPIC {{$topic->id}}：</h5></span>
-                        <span class="col-md-6.5 top space alert"><h5>{!! nl2br(e($topic->title)) !!}</h5></span>
+                        <span class="space alert topic-num">TOPIC {{$topic->id}}</span>
+                        <span class="offset-md-1 topic-title">{!! nl2br(e($topic->title)) !!}</span>
                     </div>
                     <!--投稿者名-->
                     <div class="row">
-                        <div class="col-md-2 offset-md-2 top">{!! nl2br(e($topic->a0_item)) !!}</div>
-                        <div class="col-md-2 offset-md-4 top">{!! nl2br(e($topic->b0_item)) !!}</div>
+                        <div class="offset-md-1 A-name C-name">{!! nl2br(e($topic->a0_item)) !!}</div>
+                        <div class="offset-md-3 B-name C-name">{!! nl2br(e($topic->b0_item)) !!}</div>
                     </div>
                 
                     <div class="row">
@@ -178,20 +169,20 @@
                                     <!-- A側カラム-->
                                     <aside>
                                         <div class="col-11 .col-md-6 A-side alert alert-success">陣営Aの名称:
-                                                <p class="col-item1">{!! nl2br(e($topic->a1_item)) !!}</p>A側主張:
-                                                <p class="col-item2">{!! nl2br(e($topic->a2_item)) !!}</p>A側の肯定理由・メリット:
-                                                <p class="col-item2">{!! nl2br(e($topic->a3_item)) !!}</p>B側の否定理由・デメリット:
-                                                <p class="col-item2">{!! nl2br(e($topic->a4_item)) !!}</p>
+                                                <p class="col-C1">{!! nl2br(e($topic->a1_item)) !!}</p>A側主張:
+                                                <p class="col-C2">{!! nl2br(e($topic->a2_item)) !!}</p>A側の肯定理由・メリット:
+                                                <p class="col-C2">{!! nl2br(e($topic->a3_item)) !!}</p>B側の否定理由・デメリット:
+                                                <p class="col-C2">{!! nl2br(e($topic->a4_item)) !!}</p>
                                         </div>
                                     </aside>
 
                                     <!-- B側カラム-->
                                     <aside>
                                         <div class="col-11 .col-md-6 B-side alert alert-danger">陣営Bの名称:
-                                                <p class="col-item1">{!! nl2br(e($topic->b1_item)) !!}</p>B側主張:
-                                                <p class="col-item2">{!! nl2br(e($topic->b2_item)) !!}</p>B側の肯定理由・メリット:
-                                                <p class="col-item2">{!! nl2br(e($topic->b3_item)) !!}</p>A側の否定理由・デメリット:
-                                                <p class="col-item2">{!! nl2br(e($topic->b4_item)) !!}</p>
+                                                <p class="col-C1">{!! nl2br(e($topic->b1_item)) !!}</p>B側主張:
+                                                <p class="col-C2">{!! nl2br(e($topic->b2_item)) !!}</p>B側の肯定理由・メリット:
+                                                <p class="col-C2">{!! nl2br(e($topic->b3_item)) !!}</p>A側の否定理由・デメリット:
+                                                <p class="col-C2">{!! nl2br(e($topic->b4_item)) !!}</p>
                                         </div>
                                     </aside>
                                 </div>
