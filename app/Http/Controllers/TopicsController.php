@@ -26,12 +26,12 @@ class TopicsController extends Controller
     public function store(Request $request) //  トピック投稿
     {
         $this->validate($request, [
-            'title' => 'required|max:61',
-            'a0_item' => 'required|max:181',
-            'a1_item' => 'required|max:181',
-            'a2_item' => 'required|max:181',
-            'a3_item' => 'required|max:181',
-            'a4_item' => 'required|max:181',
+            'title' => 'required|max:30',
+            'a0_item' => 'required|max:10',
+            'a1_item' => 'required|max:10',
+            'a2_item' => 'required|max:60',
+            'a3_item' => 'required|max:60',
+            'a4_item' => 'required|max:60',
         ]);
 
         $request->user()->topics()->create([
@@ -66,11 +66,11 @@ class TopicsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'b0_item' => 'required|max:181',
-            'b1_item' => 'required|max:181',
-            'b2_item' => 'required|max:181',
-            'b3_item' => 'required|max:181',
-            'b4_item' => 'required|max:181',
+            'b0_item' => 'required|max:10',
+            'b1_item' => 'required|max:60',
+            'b2_item' => 'required|max:60',
+            'b3_item' => 'required|max:60',
+            'b4_item' => 'required|max:60',
         ]);
 
         $topic = Topic::find( $id );

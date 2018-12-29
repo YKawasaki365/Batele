@@ -29,9 +29,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 // ユーザ機能
 Route::group(['middleware' => ['auth']], function () {
 
-    // 投稿(要質問&検証)
+    // 投稿
     Route::post('topics', 'TopicsController@store')->name('topics.post');
-
 
     // 追加(反論書き込み)(取り消し=delete機能なし)
     Route::group(['prefix' => 'topics/{id}'], function () {
