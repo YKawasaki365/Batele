@@ -58,8 +58,8 @@
 
             @media (max-width: 1440px) {
                 body{font-size:15px;}
-                .topic-num {font-size:110%;}
-                .topic-title {width:520px; font-size:112%; margin-left:90px;}
+                .topic-num {font-size:22px;}
+                .topic-title {width:520px; font-size:112%; margin-left:150px;}
                 .A-name {width:180px; font-size:110%; margin-left:140px;}
                 .B-name {width:180px; font-size:110%; margin-left:450px;}
                 .col-C1 {width: 45%; height: 7%; font-size:100%;}
@@ -68,7 +68,7 @@
 
             @media (max-width: 1024px) {
                 body{font-size:15px;}
-                .topic-num {font-size:110%;}
+                .topic-num {font-size:22px;}
                 .topic-title {width:460px; font-size:112%; margin-left:115px;}
                 .A-name {width:180px; font-size:110%; margin-left:140px;}
                 .B-name {width:180px; font-size:110%; margin-left:300px;}
@@ -79,7 +79,7 @@
             @media (max-width: 768px) {
                 body{font-size:15px;}
                 .headlines {font-size:80%;}
-                .topic-num {font-size:110%;}
+                .topic-num {font-size:19px;}
                 .topic-title {width:400px; font-size:125%; margin-left:30px;}
                 .A-name {width:180px; font-size:110%; margin-left:90px;}
                 .B-name {width:180px; font-size:110%; margin-left:170px;}
@@ -87,10 +87,15 @@
                 .col-C2 {width: 95%; height: 20%; font-size:110%;}
             }
 
+            @media (max-width: 640px) {
+                .topic-title {width:420px; font-size:112%; margin-left:70px;}
+                .B-name {margin-left:300px;}
+            }
+
             @media (max-width: 414px) {
                 body{font-size:12px;}
                 .headlines {font-size:80%;}
-                .topic-num {font-size:100%;}
+                .topic-num {font-size:14px;}
                 .topic-title {width:200px; font-size:110%; margin-left:0px;}
                 .A-name {width:120px; font-size:90%; margin-left:35px;}
                 .B-name {width:120px; font-size:90%; margin-left:90px;}
@@ -100,7 +105,7 @@
 
             @media (max-width: 375px) {
                 body{font-size:12px;}
-                .topic-num {font-size:100%;}
+                .topic-num {font-size:13px;}
                 .topic-title {width:200px; font-size:110%; margin-left:0px;}
                 .A-name {width:100px; font-size:90%; margin-left:35px;}
                 .B-name {width:100px; font-size:90%; margin-left:90px;}
@@ -110,7 +115,7 @@
 
             @media (max-width: 320px) {
                 body{font-size:11px;}
-                .topic-num {font-size:100%;}
+                .topic-num {font-size:10px;}
                 .topic-title {width:170px; font-size:100%; margin-left:0px;}
                 .A-name {width:90px; font-size:80%; margin-left:25px;}
                 .B-name {width:90px; font-size:80%; margin-left:60px;}
@@ -147,6 +152,11 @@
                 margin: 1%;
             }
 
+            .icon {
+                font-size:28px;
+                margin-left:10px;
+            }
+            
             .A-side {
                     border: 2px solid #898a8e;
                     border-radius:10px;
@@ -183,7 +193,8 @@
 
     <div class="container headlines">
         <div class="row justify-content-md-center">
-                <h2>トピック一覧</h2>
+                <span class="icon"><i class="far fa-list-alt"></i></span>
+                <span><h2>トピック一覧</h2></span>
         </div>
         <div class="row justify-content-end">
             {{ $topics->render('pagination::bootstrap-4') }}
@@ -230,7 +241,7 @@
                             @if (Auth::check())
                                 @if ( $topic ->b0_item == '' )
                                     <div class="row justify-content-md-center">
-                                        <div class="col-md-auto mb-4" >{!! link_to_route('topics.edit', '反論書き込み', ['id' => $topic->id], ['class' => 'btn btn-primary btn-block']) !!}</div>
+                                        <span class="col-md-auto mb-4" >{!! link_to_route('topics.edit', '反論書き込み', ['id' => $topic->id], ['class' => 'btn btn-primary btn-block']) !!}</span>
                                     </div>
                                 @endif
                             @endif

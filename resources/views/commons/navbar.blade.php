@@ -2,13 +2,16 @@
 
 <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+            <span class="bg-warning">
+                <H5><i class="fas fa-gavel"></i></H5>
+            </span>
         <a class="navbar-brand" href="/">
             <span>
                 <h4>Batele</h4>
             </span>
-        </a>
+        </a>    
             <span>
-                <font color="#c3ccdb">
+                <font color="#b8c4d8">
                     <h6>～両論併記～</h6>
                 </font>
             </span>

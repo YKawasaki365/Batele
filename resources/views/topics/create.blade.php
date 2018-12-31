@@ -144,6 +144,11 @@
                 margin-left: 2%;
             }
 
+            .icon {
+                font-size:28px;
+                margin-right:10px;
+            }
+
             .A-side {
                     border: 2px solid #898a8e;
                     border-radius:10px;
@@ -174,9 +179,12 @@
             }
 
         </style>
-
-    <div class="text-center"><h3>新規投稿</h3></div>
-
+            <div class="container headlines">
+                <div class="row justify-content-md-center">
+                    <span class="icon"><i class="fas fa-pen"></i></span>
+                    <span><h2>新規投稿</h2></span>
+                </div>
+            </div>
             <div class="container mb-5 box-outer alert alert-dark">
                 {!! Form::open(['route' => 'topics.store']) !!}
                 <div class="form-group">
