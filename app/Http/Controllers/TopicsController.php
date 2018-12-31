@@ -67,7 +67,7 @@ class TopicsController extends Controller
     {
         $this->validate($request, [
             'b0_item' => 'required|max:10',
-            'b1_item' => 'required|max:60',
+            'b1_item' => 'required|max:10',
             'b2_item' => 'required|max:60',
             'b3_item' => 'required|max:60',
             'b4_item' => 'required|max:60',

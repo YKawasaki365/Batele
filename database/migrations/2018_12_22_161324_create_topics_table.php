@@ -17,12 +17,12 @@ class CreateTopicsTable extends Migration
             $table->string('title',30);
             $table->integer('user_id')->unsigned()->index();
             $table->string('a0_item',10);  // 10字制限
-            $table->string('a1_item',60);  // 60字制限 
-            $table->string('a2_item',60);
+            $table->string('a1_item',10);
+            $table->string('a2_item',60);  // 60字制限 
             $table->string('a3_item',60);
             $table->string('a4_item',60);
             $table->string('b0_item',10);
-            $table->string('b1_item',60);
+            $table->string('b1_item',10);
             $table->string('b2_item',60);
             $table->string('b3_item',60);
             $table->string('b4_item',60);
