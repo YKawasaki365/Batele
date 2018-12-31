@@ -13,7 +13,7 @@
                 width: 50%;
             }
 
-/* メディアクエリ～フォントサイズ調整　414/768/1024以下 */
+/* メディアクエリ～フォントサイズ調整　320/375/414/768/1024以下 */
             body {
                 font-size: 16px;
             }
@@ -23,7 +23,7 @@
             .topic-title {
                     width: 510px;
                     font-size: 18px;
-                    margin-left: 120px;
+                    margin-left: 140px;
             }
             .A-name {
                     width: 200px;
@@ -95,6 +95,32 @@
                 .col-B2 {width: 100%; height: 21%; font-size:50%;}
             }
 
+            @media (max-width: 375px) {
+                body {font-size:10px;}
+                .topic-num {font-size:100%; margin-left:5px;}
+                .topic-title {font-size:70%; width:45%; margin-left:0px;}
+                .A-name {width:34%; margin:9px; margin-left:20px; font-size:80%;}
+                .B-name {width:31%; margin:11px; margin-left:45px; font-size:90%;}
+                .col-A1 {width: 95%; height:1%; font-size:70%; margin-bottom: 70%;}
+                .col-B1 {width: 85%; height:5%; font-size:70%;}
+                .col-A2 {width: 105%; height: 20%; font-size:70%; margin-bottom: 35%;}
+                .col-B2 {width: 105%; height: 20%; font-size:70%;}
+            }
+
+            @media (max-width: 320px) {
+                body {font-size:10px;}
+                .topic-num {font-size:100%; width:70px; margin-left:5px;}
+                .topic-title {font-size:90%; width:150px; margin-left:0px;}
+                .A-name {width:34%; margin:9px; margin-left:20px; font-size:80%;}
+                .B-name {width:31%; margin:11px; margin-left:30px; font-size:90%;}
+                .col-A1 {width: 95%; height:1%; font-size:70%; margin-bottom: 80%;}
+                .col-B1 {width: 95%; height:4%; font-size: 70%;}
+                .col-A2 {width: 100%; height: 20%; font-size:90%; margin-bottom: 35%;}
+                .col-B2 {width: 100%; height: 21%; font-size:50%;}
+                .A-side {padding:8px;}
+                .B-side {padding:8px;}
+            }
+
             #wrapper {
                 width: 100%;
                 height: 550px;
@@ -125,6 +151,7 @@
                     height: 95%;
                     margin: 6%;
                     margin-top: 4%;
+                    margin-left: 8%;
                     background-color: #bbeda6;
             }
 
@@ -136,7 +163,7 @@
                     height: 95%;
                     margin: 2%;
                     margin-top: 4%;
-                    margin-left: 3%;
+                    margin-left: 6%;
                     background-color: #e0ced8;
             }
 

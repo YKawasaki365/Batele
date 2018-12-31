@@ -13,7 +13,7 @@
                 width: 50%;
             }
 
-/* メディアクエリ～フォントサイズ調整　414/768/1024以下 */
+/* メディアクエリ～フォントサイズ調整　320/375/414/768/1024以下 */
             body {
                 font-size: 16px;
             }
@@ -23,7 +23,7 @@
             .topic-title {
                     width: 510px;
                     font-size: 18px;
-                    margin-left: 120px;
+                    margin-left: 140px;
                     background-color: #b6b7ba;
             }
             .A-name {
@@ -95,6 +95,20 @@
                 .col-B2 {width: 105%; height: 23%; font-size:90%; margin-bottom: 25%;;}
             }
 
+            @media (max-width: 320px) {
+                body {font-size:8px;}
+                .topic-num {font-size:100%; margin-left:3px;}
+                .topic-title {font-size:90%; width:45%; margin-left:0px;}
+                .A-name {width:26%; margin:9px; margin-left:30px; font-size:70%;}
+                .B-name {width:28%; margin:9px; margin-left:46px; font-size:60%;}
+                .col-A1 {width: 85%; height:30px; font-size: 70%; margin-bottom: 10px;}
+                .col-B1 {width: 100%; height:0px; font-size:80%; margin-bottom: 100%;}
+                .col-A2 {width: 100%; height:22%; font-size:50%; margin-bottom: 10px;}
+                .col-B2 {width: 100%; height:22%; font-size:90%; margin-bottom: 23%;;}
+                .A-side{padding:7px;}
+                .B-side{padding:10px;}
+            }
+
             .row-title {
                 text-align: center;
             }
@@ -136,6 +150,7 @@
                     height: 95%;
                     margin: 6%;
                     margin-top: 4%;
+                    margin-left: 7%;
                     background-color: #bbeda6;
             }
 
@@ -147,7 +162,7 @@
                     height: 95%;
                     margin: 2%;
                     margin-top: 4%;
-                    margin-left: 3%;
+                    margin-left: 7%;
                     background-color: #e0ced8;
             }
 

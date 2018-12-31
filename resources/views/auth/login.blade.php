@@ -4,11 +4,11 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Log in</h1>
+        <h2>ログイン</h2>
     </div>
 
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
 
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
@@ -21,10 +21,10 @@
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Log in', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('ログイン', ['class' => 'btn btn-warning btn-block']) !!}
             {!! Form::close() !!}
 
-            <p class="mt-2">New user? {!! link_to_route('signup.get', 'Sign up now!') !!}</p>
+            <p class="mt-2">ユーザー登録はお済みですか？ {!! link_to_route('signup.get', '無料ユーザー登録') !!}</p>
         </div>
     </div>
 @endsection

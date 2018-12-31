@@ -4,11 +4,11 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h2>ユーザー登録</h2>
     </div>
 
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-6">
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::label('password', 'Password（6文字以上）') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
@@ -31,7 +31,7 @@
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-warning btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>
