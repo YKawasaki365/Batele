@@ -1,5 +1,9 @@
-<!-- <<部品>>トップページのトピック一覧部分  -->
-<!-- 本体部分はwelcome.blade -->
+<!-- <<本体>>お気に入り一覧ページ """お気に入り一覧p""" -->
+<!-- ・参考blade  ->  welcome.blade(型枠)、topics/topics.blade(トピック一覧) -->
+
+@extends('layouts.app')
+
+@section('content')
 
 <!DOCTYPE html>
 
@@ -35,7 +39,20 @@
             }
             .icon {
                 font-size:28px;
-                margin-left:10px;
+                margin-right:8px;
+            }
+            .A-side {
+                    width: 100%;
+                    height: 95%;
+                    margin: 6%;
+                    margin-top: 4%;
+            }
+            .B-side {
+                    width: 100%;
+                    height: 95%;
+                    margin: 6%;
+                    margin-top: 4%;
+                    margin-left: 10%;
             }
             .A-name {
                     width: 230px;
@@ -63,7 +80,7 @@
             @media (max-width: 1440px) {
                 body{font-size:15px;}
                 .topic-num {font-size:22px;}
-                .topic-title {width:460px; font-size:112%; margin-left:190px;}
+                .topic-title {width:460px; font-size:112%; margin-left:180px;}
                 .A-name {width:180px; font-size:110%; margin-left:140px;}
                 .B-name {width:180px; font-size:110%; margin-left:450px;}
                 .col-C1 {width: 45%; height: 7%; font-size:100%;}
@@ -81,53 +98,58 @@
             }
 
             @media (max-width: 768px) {
-                body{font-size:15px;}
+                body{font-size:14px;}
                 .headlines {font-size:80%;}
                 .topic-num {font-size:19px;}
-                .topic-title {width:370px; font-size:125%; margin-left:40px;}
-                .A-name {width:180px; font-size:110%; margin-left:90px;}
-                .B-name {width:180px; font-size:110%; margin-left:170px;}
+                .topic-title {width:370px; font-size:125%; margin-left:30px;}
+                .A-name {width:180px; font-size:110%; margin-left:85px;}
+                .B-name {width:180px; font-size:110%; margin-left:150px;}
                 .col-C1 {width: 60%; height: 5%; font-size:100%;}
                 .col-C2 {width: 95%; height: 20%; font-size:110%;}
             }
 
             @media (max-width: 640px) {
-                .topic-title {width:330px; font-size:112%; margin-left:70px;}
+                .topic-title {width:350px; font-size:112%; margin-left:70px;}
                 .B-name {margin-left:300px;}
             }
 
             @media (max-width: 414px) {
                 body{font-size:12px;}
                 .headlines {font-size:80%;}
-                .topic-num {font-size:14px;}
-                .topic-title {width:180px; font-size:110%; margin-left:10px;}
-                .icon {font-size:20px;}
+                .topic-num {font-size:12px;}
+                .topic-title {width:180px; font-size:110%; margin-left:0px;}
+                .icon {font-size:24px;}
                 .A-name {width:120px; font-size:90%; margin-left:35px;}
                 .B-name {width:120px; font-size:90%; margin-left:90px;}
                 .col-C1 {width: 70%; height: 6%; font-size:80%;}
                 .col-C2 {width: 100%; height: 20%; font-size:95%;}
+                .B-side {margin-left: 20%;}
             }
 
             @media (max-width: 375px) {
                 body{font-size:12px;}
-                .topic-num {font-size:13px;}
+                .topic-num {font-size:11px;}
                 .topic-title {width:160px; font-size:110%; margin-left:0px;}
                 .icon {font-size:20px; margin-left:0px;}
-                .A-name {width:100px; font-size:90%; margin-left:35px;}
-                .B-name {width:100px; font-size:90%; margin-left:90px;}
-                .col-C1 {width: 70%; height: 6%; font-size:80%;}
-                .col-C2 {width: 100%; height: 20%; font-size:80%;}
+                .A-name {width:100px; font-size:90%; margin-left:25px;}
+                .B-name {width:100px; font-size:90%; margin-left:75px;}
+                .col-C1 {width: 80%; height: 6%; font-size:80%; margin-bottom: 5px}
+                .col-C2 {width: 105%; height: 21%; font-size:80%;}
             }
 
             @media (max-width: 320px) {
                 body{font-size:11px;}
-                .topic-num {font-size:10px;}
-                .topic-title {width:135px; font-size:90%; margin-left:0px;}
-                .A-name {width:90px; font-size:80%; margin-left:25px;}
-                .B-name {width:90px; font-size:80%; margin-left:60px;}
-                .col-C1 {width: 70%; height: 6%; font-size:70%;}
-                .col-C2 {width: 110%; height: 21%; font-size:60%;}
+                .topic-num {font-size:9px;}
+                .topic-title {width:115px; font-size:75%; margin-left:0px;}
+                .A-side {width: 120%; height: 95%; margin: 6%; margin-left: 10px; padding-left: 8px;}
+                .B-side {width: 120%; height: 95%; margin: 6%; margin-left: 30px; padding-left: 8px;}
+                .A-name {width: 90px; font-size: 8px; margin-left: 20px;}
+                .B-name {width: 90px; font-size: 8px; margin-left: 50px;}
+                .col-C1 {width: 80%; height: 6%; font-size: 6px; margin-bottom: 1px;}
+                .col-C2 {width: 115%; height: 21%; font-size: 6px;}
             }
+
+
 
             #wrapper {
                 width: 100%;
@@ -166,29 +188,13 @@
             .A-side {
                     border: 2px solid #898a8e;
                     border-radius:10px;
-                    width: 100%;
-                    height: 95%;
-                    margin: 6%;
-                    margin-top: 4%;
                     background-color: #bbeda6;
             }
 
-/* メディアクエリ～B枠位置調整　414以下 */
             .B-side {
                     border: 2px solid #898a8e;
                     border-radius:10px;
-                    width: 100%;
-                    height: 95%;
-                    margin: 6%;
-                    margin-top: 4%;
-                    margin-left: 10%;
                     background-color: #e0ced8;
-            }
-
-            @media (max-width: 414px) {
-                .B-side {
-                    margin-left: 20%;
-                }
             }
 
         </style>
@@ -200,7 +206,7 @@
     <div class="container headlines">
         <div class="row justify-content-md-center">
                 <span class="icon"><i class="far fa-list-alt"></i></span>
-                <span><h2>トピック一覧</h2></span>
+                <span><h2>お気に入り一覧</h2></span>
         </div>
         <div class="row justify-content-end">
             {{ $topics->render('pagination::bootstrap-4') }}
@@ -276,3 +282,5 @@
         <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     </body>
 </html>
+
+@endsection

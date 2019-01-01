@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model
 {
-    protected $fillable = ['title', 'user_id', 'a0_item', 'a1_item', 'a2_item', 'a3_item', 'a4_item', 'b0_item', 'b1_item', 'b2_item', 'b3_item', 'b4_item',]; 
+    protected $fillable = ['title', 'topic_id', 'user_id', 'a0_item', 'a1_item', 'a2_item', 'a3_item', 'a4_item', 'b0_item', 'b1_item', 'b2_item', 'b3_item', 'b4_item',]; 
 
     public function user()
     {

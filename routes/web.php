@@ -38,6 +38,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('comments', 'CommentsController@comments')->name('comments.comments');
     });
 
+    // 追加(お気に入り)
+    Route::group(['prefix' => 'topics/{id}'], function () {
+        Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');
+        Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
+        Route::get('favorites', 'FavoritesController@favorites')->name('favorites.favorites');
+    });
+
     Route::resource('topics', 'TopicsController', ['only' => ['store', 'destroy']]);
 });
 
