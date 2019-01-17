@@ -331,12 +331,14 @@
                                             </p>
                                         </span>
                                 @endif
-                            @endif
+                            @else
                                         <span class="comment" >
                                             <p class="btn btn-primary btn-block disabled">
                                                 反論書き込み
                                             </p>
                                         </span>
+                            @endif
+
                         <!-- B得票数 -->
                             <span class="alert alert-secondary B-vote">
                                 得票数：{!! $count_votes_b = $topic->b_vote_users()->count() !!}
