@@ -14,12 +14,14 @@ class Controller extends BaseController
     public function counts($user) {
         $count_topics = $user->topics()->count();
         $count_favorites = $user->favorites()->count();
-        $count_votes = $user->topics()->count();
+        $count_a_votes = $user->a_votes()->count();
+        $count_b_votes = $user->b_votes()->count();
 
         return [
             'count_topics' => $count_topics,
             'count_favorites' => $count_favorites,
-            'count_votes' => $count_votes,
+            'count_a_votes' => $count_a_votes,
+            'count_b_votes' => $count_b_votes,
         ];
     }
 }

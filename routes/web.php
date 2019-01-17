@@ -25,7 +25,7 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
-//見方・・・resource('URL末尾', 'Controller(及びアクション)')->name('別場所でのルーティングの際に引用する為のあだ名')
+//見方･･･resource('URL末尾名(任意ok?)', 'Controller@アクション名')->name('bladeから引用する際のあだ名。任意ok')
 // ユーザ機能
 Route::group(['middleware' => ['auth']], function () {
 
@@ -45,21 +45,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('favorites', 'FavoritesController@favorites')->name('favorites.favorites');
     });
 
+    // 追加(AB投票)(取り消し=delete機能なし)
+    Route::group(['prefix' => 'topics/{id}'], function () {
+        Route::post('a_vote', 'A_votesController@store')->name('a_votes.vote');
+        Route::get('a_votes', 'A_votesController@a_votes')->name('a_votes.votes');
+        Route::post('b_vote', 'B_votesController@store')->name('b_votes.vote');
+        Route::get('b_votes', 'B_votesController@b_votes')->name('b_votes.votes');
+    });
+
     Route::resource('topics', 'TopicsController', ['only' => ['store', 'destroy']]);
 });
-
-
-/*
-    // 追加(お気に入り)
-    Route::group(['prefix' => 'topics/{id}'], function () {
-        Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');
-        Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
-        Route::get('favorites', 'FavoritesController@favorites')->name('favorites.favorites');
-    });
-
-    // 追加(投票)(取り消し=delete機能なし)
-    Route::group(['prefix' => 'topics/{id}'], function () {
-        Route::post('vote', 'VotesController@store')->name('votes.vote');
-        Route::get('votes', 'VotesController@votes')->name('votes.votes');
-    });
-*/

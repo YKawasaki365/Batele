@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user','name', 'email', 'password',
     ];
 
     /**
@@ -68,46 +68,59 @@ class User extends Authenticatable
         return $this->favorites()->where('topic_id', $topicId)->exists();
     }
 
-// 以下、投票に関して
+// 以下、A投票に関して(Undo functionは仕様外の為、未実装)
 
-    public function votes() // 投票一覧を取得する機能(不要か?)
+    public function a_votes()   //  あるユーザーが投票したtopicの総数
     {
-        return $this->belongsToMany(Topic::class, 'votes', 'user_id', 'topic_id')->withTimestamps();
+        return $this->belongsToMany(Topic::class, 'a_votes', 'user_id', 'topic_id')->withTimestamps();
     }
 
-    public function vote($topicId)
+    public function a_vote($topicId)
     {
         // 既に投票しているかの確認
-        if ($this->is_voting($topicId)) {
+        if ($this->a_is_voting($topicId)) {
             // 既に投票していれば何もしない
             return false;
         } else {
             // 未投票であれば投票する
-            $this->votes()->attach($topicId);
+            $this->a_votes()->attach($topicId);
             return true;
         }
     }
 
-    public function unvote($topicId)
+    public function a_is_voting($topicId)
     {
-        if ($exist = $this->is_voting($topicId)) {
-            // 既にフォローしていればフォローを外す
-            $this->votes()->detach($topicId);
-            return true;
-        } else {
-            // 未フォローであれば何もしない
+        return $this->a_votes()->where('topic_id', $topicId)->exists();
+    }
+
+// 以下、B投票に関して(Undo functionは仕様外の為、未実装)
+
+    public function b_votes()   //  あるユーザーが投票したtopicの総数
+    {
+        return $this->belongsToMany(Topic::class, 'b_votes', 'user_id', 'topic_id')->withTimestamps();
+    }
+
+    public function b_vote($topicId)
+    {
+        // 既に投票しているかの確認
+        if ($this->b_is_voting($topicId)) {
+            // 既に投票していれば何もしない
             return false;
+        } else {
+            // 未投票であれば投票する
+            $this->b_votes()->attach($topicId);
+            return true;
         }
     }
 
-    public function is_voting($topicId)
+    public function b_is_voting($topicId)
     {
-        return $this->votes()->where('topic_id', $topicId)->exists();
+        return $this->b_votes()->where('topic_id', $topicId)->exists();
     }
 
-// 以下、反論書き込みに関して(function undoは仕様にない為、未実装)
+// 以下、反論書き込みに関して(Undo functionは仕様外の為、未実装)
 
-    public function comments() // 反論書き込み一覧を取得する機能(不要か?)
+    public function comments() // 反論書き込み一覧を取得する機能
     {
         return $this->belongsToMany(Topic::class, 'comments', 'user_id', 'topic_id')->withTimestamps();
     }
@@ -129,6 +142,5 @@ class User extends Authenticatable
     {
         return $this->comments()->where('topic_id', $topicId)->exists();
     }
-
 
 }

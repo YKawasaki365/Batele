@@ -13,7 +13,3 @@
         </button>
     {!! Form::close() !!}
 @endif
-
-<!--
-<button class="btn"><i class="fa fa-home"></i> Home</button>
--->

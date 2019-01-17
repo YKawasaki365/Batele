@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model
 {
-    protected $fillable = ['title', 'topic_id', 'user_id', 'a0_item', 'a1_item', 'a2_item', 'a3_item', 'a4_item', 'b0_item', 'b1_item', 'b2_item', 'b3_item', 'b4_item',]; 
+    protected $fillable = ['title', 'user', 'topic_id', 'user_id', 'a0_item', 'a1_item', 'a2_item', 'a3_item', 'a4_item', 'b0_item', 'b1_item', 'b2_item', 'b3_item', 'b4_item',]; 
 
     public function user()
     {
@@ -19,10 +19,15 @@ class Topic extends Model
         return $this->belongsToMany(Topic::class, 'favorites', 'topic_id', 'user_id')->withTimestamps();
     }
 
-// 以下、投票に関して
-    public function vote_users()
+// 以下、A投票に関して
+    public function a_vote_users()   //  あるトピックが投票された総数
     {
-        return $this->belongsToMany(Topic::class, 'votes', 'topic_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany(Topic::class, 'a_votes', 'topic_id', 'user_id')->withTimestamps();
     }
 
+// 以下、B投票に関して
+    public function b_vote_users()   //  あるトピックが投票された総数
+    {
+        return $this->belongsToMany(Topic::class, 'b_votes', 'topic_id', 'user_id')->withTimestamps();
+    }
 }
