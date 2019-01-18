@@ -27,4 +27,5 @@
             <p class="mt-2">ユーザー登録はお済みですか？ {!! link_to_route('signup.get', '無料ユーザー登録') !!}</p>
         </div>
     </div>
+<div style="padding-top:100px;"></div>
 @endsection

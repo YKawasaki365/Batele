@@ -24,7 +24,7 @@ class FavoritesController extends Controller
     public function favorites($id)
     {
         $user = User::find($id);
-        $favorites = $user->favorites()->orderBy('created_at', 'desc')->paginate(10);
+        $favorites = $user->favorites()->orderBy('created_at', 'desc')->paginate(5);
 
         $data = [
             'user' => $user,

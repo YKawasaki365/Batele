@@ -288,7 +288,6 @@
                                                 <p class="col-C2">{!! nl2br(e($topic->a2_item)) !!}</p>A側の肯定理由・メリット:
                                                 <p class="col-C2">{!! nl2br(e($topic->a3_item)) !!}</p>B側の否定理由・デメリット:
                                                 <p class="col-C2">{!! nl2br(e($topic->a4_item)) !!}</p>
-
                                         </div>
                                     </aside>
                                     <!-- B側カラム-->
@@ -319,25 +318,26 @@
                             </span>
                                         
                         <!-- 反論書き込みボタン -->
-                            @if (Auth::check())
+
                                 @if ( $topic ->b0_item == '' )
+                                    @if (Auth::check())
                                         <span class="comment" >
                                             {!! link_to_route('topics.edit', '反論書き込み', ['id' => $topic->id], ['class' => 'btn btn-primary btn-block']) !!}
                                         </span>
-                                @else
+                                    @else
                                         <span class="comment" >
                                             <p class="btn btn-primary btn-block disabled">
                                                 反論書き込み
+                                            </p>
+                                        </span>
+                                    @endif
+                                @else
+                                        <span class="comment" >
+                                            <p class="btn btn-secondary btn-block disabled">
+                                                反論書き済み
                                             </p>
                                         </span>
                                 @endif
-                            @else
-                                        <span class="comment" >
-                                            <p class="btn btn-primary btn-block disabled">
-                                                反論書き込み
-                                            </p>
-                                        </span>
-                            @endif
 
                         <!-- B得票数 -->
                             <span class="alert alert-secondary B-vote">
@@ -350,7 +350,6 @@
                                     @include('user_buttons.b_vote_button', ['topic' => $topic])
                                 @endif
                             </span>
-
                     </div>
             </div>
         @endforeach
@@ -360,7 +359,6 @@
                     {{ $topics->render('pagination::bootstrap-4') }}
             </div>
         </div>
-
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -368,4 +366,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     </body>
+
 </html>

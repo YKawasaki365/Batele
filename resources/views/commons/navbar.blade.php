@@ -24,11 +24,7 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
 
-
                 @if (Auth::check())
-<!--
-                    <li class="nav-item">{!! link_to_route('a_votes.votes', '投票一覧', ['id' => Auth::id()], ['class' => 'nav-link']) !!}</li>
--->
                     <li class="nav-item">{!! link_to_route('favorites.favorites', 'お気に入り一覧', ['id' => Auth::id()], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item">{!! link_to_route('topics.create', '新規投稿', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
@@ -41,12 +37,3 @@
         </div>
     </nav>
 </header>
-
-<!--
-                    <li class="nav-item">{!! link_to_route('topics.create', '新規投稿', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item">{!! link_to_route('favorites.favorites', 'Favorites', ['id' => Auth::id()], ['class' => 'nav-link']) !!}</li>
-
-
-                                <li>{!! link_to_route('favorites.favorites', 'Favorites', ['id' => Auth::id()]) !!}</li>
-                                <li role="separator" class="divider"></li>
--->
